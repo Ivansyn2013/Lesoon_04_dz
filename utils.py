@@ -1,3 +1,8 @@
+import requests
+import re
+import datetime
+from decimal import Decimal
+
 
 def currentcy_rates(argv: str):
     '''
@@ -33,11 +38,6 @@ def currentcy_rates(argv: str):
 
 
 if __name__ == '__main__':
-    import requests
-    import re
-    import datetime
-    from decimal import Decimal
     import sys
 
     currentcy_rates((input('Введи обозначение валюты:')).upper())
-
