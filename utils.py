@@ -1,10 +1,11 @@
-def currentcy_rates(code: str):
+
+def currentcy_rates(argv: str):
     '''
     Вывод курса вылют
     :param code: сокращенное отбозначение валюты
     :return: текущий курс к рублю
     '''
-    code = code
+    code = argv
     response = requests.get("http://www.cbr.ru/scripts/XML_daily.asp")
     content = response.content.decode(encoding=response.encoding)
     val_name = []
@@ -36,5 +37,7 @@ if __name__ == '__main__':
     import re
     import datetime
     from decimal import Decimal
+    import sys
 
     currentcy_rates((input('Введи обозначение валюты:')).upper())
+
